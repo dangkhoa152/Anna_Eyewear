@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna | Chi tiết sản phẩm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f7f2ec;
+      --surface: #fffaf4;
+      --surface-soft: #f2ece4;
+      --line: rgba(104, 80, 58, 0.12);
+      --text: #2b1d14;
+      --muted: #6d5648;
+      --accent: #8fdcdf;
+      --accent-deep: #53bcc2;
+      --shadow: 0 20px 50px rgba(43, 29, 18, 0.08);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", sans-serif;
+      background: linear-gradient(180deg, #f8f4ef 0%, #f4eee7 100%);
+      color: var(--text);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1280px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 250, 244, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: #1f2937;
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .back-link {
+      min-height: 54px;
+      padding: 0 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 1px solid rgba(108, 82, 58, 0.16);
+      background: rgba(255, 255, 255, 0.76);
+      color: #4a3a2d;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(43, 29, 18, 0.05);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .back-link:hover,
+    .cart-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 28px rgba(43, 29, 18, 0.08);
+    }
+
+    .cart-link {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(108, 82, 58, 0.16);
+      color: #2b1d14;
+      box-shadow: 0 8px 24px rgba(43, 29, 18, 0.05);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -3px;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #101827 0%, #213047 100%);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      border: 2px solid #fffaf4;
+    }
+
+    .detail-wrap {
+      padding: 28px 0 26px;
+    }
+
+    .detail-card {
+      background: var(--surface);
+      border: 1px solid rgba(108, 82, 58, 0.08);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.24fr) minmax(360px, 0.82fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .gallery-box {
+      background: #ece8e3;
+      border-radius: 28px;
+      padding: 30px;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .gallery-box img {
+      width: 100%;
+      max-width: 740px;
+      max-height: 620px;
+      object-fit: contain;
+      margin: 0 auto;
+    }
+
+    .gallery-box {
+  position: relative;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 250, 244, 0.92);
+  color: #2b1d14;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(43, 29, 18, 0.10);
+  z-index: 2;
+  transition: 0.2s ease;
+}
+
+.gallery-arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: #ffffff;
+}
+
+.gallery-arrow-left {
+  left: 18px;
+}
+
+.gallery-arrow-right {
+  right: 18px;
+}
+
+@media (max-width: 768px) {
+  .gallery-arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .gallery-arrow-left {
+    left: 10px;
+  }
+
+  .gallery-arrow-right {
+    right: 10px;
+  }
+}
+
+    .detail-side {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding-top: 14px;
+    }
+
+    .badge {
+      width: fit-content;
+      padding: 8px 14px;
+      border: 1px solid rgba(83, 188, 194, 0.6);
+      border-radius: 10px;
+      background: rgba(143, 220, 223, 0.12);
+      color: #2998a0;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: 38px;
+      line-height: 1.18;
+      font-weight: 800;
+      color: #2b1d14;
+    }
+
+    .product-price {
+      margin-top: 10px;
+      font-size: 34px;
+      font-weight: 800;
+      color: #2b1d14;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .thumb-btn {
+      border: 1px solid rgba(108, 82, 58, 0.1);
+      background: #f0ece7;
+      border-radius: 18px;
+      padding: 10px;
+      min-height: 128px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .thumb-btn.active {
+      border-color: rgba(83, 188, 194, 0.95);
+      box-shadow: 0 0 0 2px rgba(143, 220, 223, 0.2);
+      background: #fff;
+    }
+
+    .thumb-btn img {
+      width: 100%;
+      height: 104px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .product-short {
+      margin: 2px 0 0;
+      font-size: 16px;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    .purchase-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .qty-box {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(108, 82, 58, 0.18);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      min-width: 182px;
+      height: 60px;
+    }
+
+    .qty-box button {
+      width: 60px;
+      height: 60px;
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .qty-box input {
+      width: 62px;
+      height: 60px;
+      border: none;
+      outline: none;
+      background: transparent;
+      text-align: center;
+      color: #2b1d14;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .qty-box input::-webkit-outer-spin-button,
+    .qty-box input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .qty-box input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    .add-cart-btn {
+      min-width: 260px;
+      height: 60px;
+      border-radius: 14px;
+      border: 1px solid rgba(83, 188, 194, 0.92);
+      background: rgba(143, 220, 223, 0.08);
+      color: #6bc6cc;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      padding: 0 22px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .add-cart-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(83, 188, 194, 0.12);
+    }
+
+    .cart-note {
+      min-height: 22px;
+      margin: 0;
+      color: #33838a;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .related-section {
+      padding: 18px 0 42px;
+    }
+
+    .section-box {
+      background: var(--surface);
+      border: 1px solid rgba(108, 82, 58, 0.08);
+      border-radius: var(--radius-xl);
+      padding: 32px 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+    }
+
+    .section-head .eyebrow {
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #9a6d43;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 42px;
+      line-height: 1.14;
+      font-weight: 700;
+      font-family: "Cormorant Garamond", serif;
+      color: #2b1d14;
+    }
+
+    .section-head p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 760px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .related-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fffaf5 0%, #f4ece2 100%);
+      border: 1px solid rgba(108, 82, 58, 0.1);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      cursor: pointer;
+    }
+
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 26px rgba(43, 29, 18, 0.08);
+    }
+
+    .related-image {
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #ece7df;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .related-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .related-badge {
+      width: fit-content;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(143, 220, 223, 0.15);
+      color: #2b9ca3;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .related-name {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      color: #2b1d14;
+      line-height: 1.45;
+    }
+
+    .related-desc {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .related-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .related-price {
+      font-size: 18px;
+      font-weight: 800;
+      color: #2b1d14;
+    }
+
+    .related-link {
+      font-size: 14px;
+      font-weight: 700;
+      color: #8fcbc8;
+    }
+
+    .site-footer {
+      position: relative;
+      margin-top: 10px;
+      padding-top: 28px;
+      background: linear-gradient(180deg, #1d120d 0%, #2f1d13 100%);
+      color: rgba(255, 248, 240, 0.88);
+      overflow: hidden;
+    }
+
+    .footer-accent {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #f7e6d0 0%, #c48e54 35%, #8fdcdf 100%);
+      opacity: 0.95;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.8fr 0.9fr 1fr;
+      gap: 28px;
+      padding: 58px 0 26px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-brand-col .brand {
+      color: #fffaf4;
+      margin-bottom: 18px;
+    }
+
+    .footer-brand-col .brand img {
+      width: 46px;
+      height: 46px;
+      object-fit: cover;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-brand-text {
+      margin: 0 0 22px;
+      max-width: 360px;
+      line-height: 1.85;
+      font-size: 14px;
+      color: rgba(255, 244, 232, 0.76);
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff8f0;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .footer-socials a:hover {
+      transform: translateY(-2px);
+      background: rgba(143, 220, 223, 0.14);
+    }
+
+    .footer-socials svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 18px;
+      font-size: 16px;
+      color: #fffaf4;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      margin: 0 0 12px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(255, 244, 232, 0.72);
+    }
+
+    .footer-col a:hover {
+      color: #8fdcdf;
+    }
+
+    .footer-btn {
+      margin-top: 6px;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: rgba(143, 220, 223, 0.12);
+      border: 1px solid rgba(143, 220, 223, 0.32);
+      color: #d7fbff !important;
+      font-weight: 700;
+    }
+
+    .footer-bottom {
+      position: relative;
+      z-index: 1;
+      min-height: 68px;
+      padding: 18px 0 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: rgba(255, 244, 232, 0.6);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      padding: 36px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 16px;
+      border-radius: 18px;
+      background: #f7f1ea;
+      border: 1px dashed rgba(108, 82, 58, 0.18);
+    }
+
+    @media (max-width: 1180px) {
+      .detail-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-box {
+        min-height: 520px;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: min(100% - 24px, 100%);
+      }
+
+      .topbar-inner {
+        min-height: 78px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .back-link {
+        display: none;
+      }
+
+      .detail-card,
+      .section-box {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .gallery-box {
+        min-height: 320px;
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .product-title {
+        font-size: 28px;
+      }
+
+      .product-price {
+        font-size: 28px;
+      }
+
+      .thumb-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .thumb-btn {
+        min-height: 112px;
+      }
+
+      .thumb-btn img {
+        height: 88px;
+      }
+
+      .purchase-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .qty-box,
+      .add-cart-btn {
+        width: 100%;
+      }
+
+      .section-head h2 {
+        font-size: 34px;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="home.html" class="brand">
+        <img src="../img/logo.jpg" alt="Anna Eyewear">
+        <span>Anna Eyewear</span>
+      </a>
+
+      <div class="top-actions">
+        <a href="product.html" class="back-link">Quay lại bộ sưu tập</a>
+
+        <a href="cart.html" class="cart-link" aria-label="Giỏ hàng">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M3 4H5L7.2 14.2C7.4 15.1 8.2 15.7 9.1 15.7H17.4C18.3 15.7 19.1 15.1 19.3 14.2L21 7.5H6.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9.2" cy="19.2" r="1.4" fill="currentColor"/>
+            <circle cx="17.2" cy="19.2" r="1.4" fill="currentColor"/>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="detail-wrap">
+      <div class="container">
+        <div class="detail-card">
+          <div class="detail-grid">
+            <div class="gallery-box">
+              <button type="button" class="gallery-arrow gallery-arrow-left" id="prevImageBtn" aria-label="Ảnh trước">
+                &#10094;
+              </button>
+
+              <img id="mainImage" src="../img/logo.jpg" alt="Anna Eyewear">
+
+              <button type="button" class="gallery-arrow gallery-arrow-right" id="nextImageBtn" aria-label="Ảnh tiếp theo">
+                &#10095;
+              </button>
+            </div>
+
+            <div class="detail-side">
+              <div class="badge" id="detailBadge">Anna Eyewear</div>
+
+              <div>
+                <h1 class="product-title" id="detailName">Tên sản phẩm</h1>
+                <div class="product-price" id="detailPrice">0đ</div>
+              </div>
+
+              <div class="thumb-grid" id="thumbGrid"></div>
+
+              <p class="product-short" id="detailShort">
+                Mô tả ngắn của sản phẩm sẽ hiển thị ở đây.
+              </p>
+
+              <div class="purchase-row">
+                <div class="qty-box">
+                  <button type="button" id="decreaseQty">-</button>
+                  <input type="number" id="productQty" min="1" value="1">
+                  <button type="button" id="increaseQty">+</button>
+                </div>
+
+                <button type="button" class="add-cart-btn" id="addToCartBtn">THÊM VÀO GIỎ HÀNG</button>
+              </div>
+
+              <p class="cart-note" id="cartNote"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-section">
+      <div class="container">
+        <div class="section-box">
+          <div class="section-head">
+            <div class="eyebrow">Anna Eyewear</div>
+            <h2>Những sản phẩm liên quan</h2>
+            <p>Khám phá thêm một vài thiết kế cùng tinh thần thanh lịch, nhẹ nhàng và hiện đại của Anna.</p>
+          </div>
+
+          <div class="related-grid" id="relatedGrid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-accent"></div>
+
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a href="home.html" class="brand">
+          <img src="../img/logo.jpg" alt="Anna Eyewear" />
+          <span>Anna Eyewear</span>
+        </a>
+
+        <p class="footer-brand-text">
+          Anna theo đuổi vẻ đẹp thanh lịch, hiện đại và tinh giản. Mỗi thiết kế được chọn lựa để đồng hành cùng phong cách sống nhẹ nhàng nhưng vẫn đủ dấu ấn riêng.
+        </p>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M14 8H16V5H13.5C10.8 5 9 6.8 9 9.8V12H7V15H9V20H12.5V15H15.3L15.8 12H12.5V10.2C12.5 8.9 13 8 14 8Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M14 4C14.6 5.8 15.8 7.1 18 7.6V10.2C16.6 10.2 15.4 9.8 14.4 9V14.6C14.4 17.6 12.2 19.7 9.3 19.7C6.5 19.7 4.3 17.6 4.3 14.8C4.3 12.1 6.5 9.9 9.3 9.9C9.7 9.9 10.1 9.9 10.4 10V12.7C10.1 12.6 9.8 12.6 9.5 12.6C8.1 12.6 7 13.7 7 15.1C7 16.5 8.1 17.6 9.5 17.6C10.9 17.6 12 16.5 12 15.1V4H14Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Khám phá</h3>
+        <a href="home.html">Trang chủ</a>
+        <a href="product.html">Bộ sưu tập</a>
+        <a href="about.html">Về Anna</a>
+        <a href="contact.html">Liên hệ</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Hỗ trợ</h3>
+        <a href="return-policy.html">Chính sách đổi trả</a>
+        <a href="shipping-policy.html">Chính sách giao hàng</a>
+        <a href="terms.html">Điều khoản sử dụng</a>
+        <a href="privacy-policy.html">Chính sách bảo mật</a>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Thông tin liên hệ</h3>
+        <p>Anna Eyewear</p>
+        <p>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+        <p>0901 234 567</p>
+        <p>hello@annaeyewear.com</p>
+        <a href="contact.html" class="footer-btn">Liên hệ với chúng tôi</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Anna Eyewear. All rights reserved.</span>
+      <span>Eyewear crafted for modern elegance</span>
+    </div>
+  </footer>
+
+  <script>
+    const fallbackProducts = [
+      {
+        id: 'AN-CL01',
+        name: 'AN-CL01',
+        price: '250.000đ',
+        badge: 'Signature',
+        desc: 'Gọng kính Anna thiết kế mắt mèo trong suốt phối kim loại thanh lịch, giúp tôn vinh đường nét và làm bừng sáng khuôn mặt.',
+        shortDescription: 'Gọng kính Anna thiết kế mắt mèo trong suốt phối kim loại thanh lịch, giúp tôn vinh đường nét và làm bừng sáng khuôn mặt.',
+        image: '../img/1.jpg',
+        images: ['../img/1.jpg', '../img/1.jpg', '../img/1.jpg', '../img/1.jpg']
+      },
+      {
+        id: 'AN-PK04',
+        name: 'AN-PK04',
+        price: '1.180.000đ',
+        badge: 'Best Seller',
+        desc: 'Sắc hồng thạch ngọt ngào kết hợp cùng chi tiết đính đá lấp lánh ở càng kính, mang đến vẻ đẹp yêu kiều, tiểu thư và thanh lịch.',
+        shortDescription: 'Sắc hồng thạch ngọt ngào kết hợp cùng chi tiết đính đá lấp lánh ở càng kính, mang đến vẻ đẹp yêu kiều, tiểu thư và thanh lịch.',
+        image: '../img/10.png',
+        images: ['../img/10.png', '../img/10.png', '../img/10.png', '../img/10.png']
+      },
+      {
+        id: 'AN-TRF02',
+        name: 'AN-TRF02',
+        price: '320.000đ',
+        badge: 'Modern',
+        desc: 'Thiết kế mắt mèo sắc sảo kết hợp tone màu trà hổ phách mang lại vẻ ngoài cá tính, sang trọng và cực kỳ tôn da.',
+        shortDescription: 'Thiết kế mắt mèo sắc sảo kết hợp tone màu trà hổ phách mang lại vẻ ngoài cá tính, sang trọng và cực kỳ tôn da.',
+        image: '../img/2.jpg',
+        images: ['../img/2.jpg', '../img/2.jpg', '../img/2.jpg', '../img/2.jpg']
+      },
+      {
+        id: 'AN-H001',
+        name: 'AN-H001',
+        price: '290.000đ',
+        badge: 'Classic',
+        desc: 'Gọng kính dáng mắt mèo thời thượng với sắc đen huyền bí, là điểm nhấn hoàn hảo tôn vinh đường nét gương mặt thanh tú.',
+        shortDescription: 'Gọng kính dáng mắt mèo thời thượng với sắc đen huyền bí, là điểm nhấn hoàn hảo tôn vinh đường nét gương mặt thanh tú.',
+        image: '../img/4.jpg',
+        images: ['../img/4.jpg', '../img/4.jpg', '../img/4.jpg', '../img/4.jpg']
+      },
+      {
+        id: 'AN-CL03',
+        name: 'AN-CL03',
+        price: '210.000đ',
+        badge: 'Light',
+        desc: 'Kiểu dáng mắt mèo với đường gọng dày bản sắc sảo, tôn vinh nét đẹp hiện đại và khẳng định phong cách cá nhân mạnh mẽ.',
+        shortDescription: 'Kiểu dáng mắt mèo với đường gọng dày bản sắc sảo, tôn vinh nét đẹp hiện đại và khẳng định phong cách cá nhân mạnh mẽ.',
+        image: '../img/5.jpg',
+        images: ['../img/5.jpg', '../img/5.jpg', '../img/5.jpg', '../img/5.jpg']
+      }
+    ];
+
+    const cartCount = document.getElementById('cartCount');
+    const detailName = document.getElementById('detailName');
+    const detailPrice = document.getElementById('detailPrice');
+    const detailBadge = document.getElementById('detailBadge');
+    const detailShort = document.getElementById('detailShort');
+    const mainImage = document.getElementById('mainImage');
+    const thumbGrid = document.getElementById('thumbGrid');
+    const prevImageBtn = document.getElementById('prevImageBtn');
+    const nextImageBtn = document.getElementById('nextImageBtn');
+
+    let currentImages = [];
+    let currentImageIndex = 0;
+    const productQty = document.getElementById('productQty');
+    const decreaseQty = document.getElementById('decreaseQty');
+    const increaseQty = document.getElementById('increaseQty');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const cartNote = document.getElementById('cartNote');
+    const relatedGrid = document.getElementById('relatedGrid');
+
+    function getCart() {
+      return JSON.parse(localStorage.getItem('luneria_cart') || '[]');
+    }
+
+    function updateCartCount() {
+      const cart = getCart();
+      const total = cart.reduce((sum, item) => sum + (parseInt(item.quantity, 10) || 0), 0);
+      cartCount.textContent = total;
+    }
+
+    function getSelectedProduct() {
+      try {
+        return JSON.parse(localStorage.getItem('anna_selected_product') || 'null');
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function getAllProducts() {
+      try {
+        const stored = JSON.parse(localStorage.getItem('anna_all_products') || '[]');
+        if (Array.isArray(stored) && stored.length) return stored;
+      } catch (error) {}
+      return fallbackProducts;
+    }
+
+    function normalizeImages(product) {
+      const list = Array.isArray(product.images) ? product.images.filter(Boolean) : [];
+      if (list.length) return list;
+      if (product.image) return [product.image, product.image, product.image, product.image];
+      return ['../img/logo.jpg', '../img/logo.jpg', '../img/logo.jpg', '../img/logo.jpg'];
+    }
+    function updateMainImage(index) {
+  if (!currentImages.length) return;
+
+  currentImageIndex = index;
+  mainImage.src = currentImages[currentImageIndex];
+  mainImage.alt = 'Ảnh sản phẩm ' + (currentImageIndex + 1);
+
+  document.querySelectorAll('.thumb-btn').forEach((item, i) => {
+    item.classList.toggle('active', i === currentImageIndex);
+  });
+}
+
+function changeImage(step) {
+  if (!currentImages.length) return;
+
+  currentImageIndex += step;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = currentImages.length - 1;
+  }
+
+  if (currentImageIndex >= currentImages.length) {
+    currentImageIndex = 0;
+  }
+
+  updateMainImage(currentImageIndex);
+}
+
+    function renderThumbs(images) {
+  currentImages = images;
+  currentImageIndex = 0;
+  thumbGrid.innerHTML = '';
+
+  images.forEach((src, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'thumb-btn' + (index === 0 ? ' active' : '');
+    button.innerHTML = '<img src="' + src + '" alt="Ảnh phụ sản phẩm ' + (index + 1) + '">';
+
+    button.addEventListener('click', () => {
+      updateMainImage(index);
+    });
+
+    thumbGrid.appendChild(button);
+  });
+
+  updateMainImage(0);
+}
+
+    function renderRelatedProducts(currentProduct) {
+      const sourceProducts = getAllProducts();
+      const related = sourceProducts
+        .filter(item => item && item.name !== currentProduct.name)
+        .slice(0, 4);
+
+      if (!related.length) {
+        relatedGrid.innerHTML = '<div class="empty-state">Hiện chưa có sản phẩm liên quan để hiển thị.</div>';
+        return;
+      }
+
+      relatedGrid.innerHTML = related.map(item => {
+        const safe = item.image || '../img/logo.jpg';
+        return `
+          <article class="related-card" data-product='${JSON.stringify(item).replace(/'/g, "&apos;")}'>
+            <div class="related-image">
+              <img src="${safe}" alt="${item.name}">
+            </div>
+            <span class="related-badge">${item.badge || 'Anna Eyewear'}</span>
+            <h3 class="related-name">${item.name}</h3>
+            <p class="related-desc">${item.shortDescription || item.desc || ''}</p>
+            <div class="related-bottom">
+              <strong class="related-price">${item.price || ''}</strong>
+              <span class="related-link">Xem chi tiết</span>
+            </div>
+          </article>
+        `;
+      }).join('');
+
+      document.querySelectorAll('.related-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const product = JSON.parse(card.dataset.product.replace(/&apos;/g, "'"));
+          localStorage.setItem('anna_selected_product', JSON.stringify(product));
+          localStorage.setItem('anna_all_products', JSON.stringify(getAllProducts()));
+          window.location.href = 'product-detail.html';
+        });
+      });
+    }
+
+    function renderProduct(product) {
+      const images = normalizeImages(product);
+      detailName.textContent = product.name || 'Sản phẩm Anna';
+      detailPrice.textContent = product.price || '0đ';
+      detailBadge.textContent = product.badge || 'Anna Eyewear';
+      detailShort.textContent = product.shortDescription || product.desc || 'Thiết kế thanh lịch, nhẹ nhàng và hiện đại.';
+      mainImage.alt = product.name || 'Sản phẩm Anna';
+      renderThumbs(images);
+      renderRelatedProducts(product);
+    }
+
+    function addToCart(product) {
+      const quantity = parseInt(productQty.value, 10) || 1;
+      const cart = getCart();
+      const existingIndex = cart.findIndex(item => item.name === product.name);
+
+      if (existingIndex !== -1) {
+        cart[existingIndex].quantity += quantity;
+      } else {
+        cart.push({
+          name: product.name,
+          desc: product.shortDescription || product.desc || '',
+          price: product.price || '',
+          quantity: quantity,
+          image: product.image || normalizeImages(product)[0]
+        });
+      }
+
+      localStorage.setItem('luneria_cart', JSON.stringify(cart));
+      updateCartCount();
+      cartNote.textContent = 'Đã thêm ' + quantity + ' sản phẩm vào giỏ hàng';
+    }
+
+    decreaseQty.addEventListener('click', () => {
+      let value = parseInt(productQty.value, 10) || 1;
+      if (value > 1) productQty.value = value - 1;
+    });
+
+    increaseQty.addEventListener('click', () => {
+      let value = parseInt(productQty.value, 10) || 1;
+      productQty.value = value + 1;
+    });
+
+    productQty.addEventListener('input', () => {
+      const value = parseInt(productQty.value, 10);
+      if (!value || value < 1) productQty.value = 1;
+    });
+
+    prevImageBtn.addEventListener('click', () => {
+      changeImage(-1);
+    });
+
+    nextImageBtn.addEventListener('click', () => {
+      changeImage(1);
+    });
+    
+    const allProducts = getAllProducts();
+    const selectedProduct = getSelectedProduct() || allProducts[0] || fallbackProducts[0];
+    renderProduct(selectedProduct);
+    updateCartCount();
+
+    addToCartBtn.addEventListener('click', () => addToCart(selectedProduct));
+    window.addEventListener('storage', updateCartCount);
+  </script>
+</body>
+</html>

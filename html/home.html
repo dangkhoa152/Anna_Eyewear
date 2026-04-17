@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anna Eyewear</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/homepage-eyewear.css">
+  <link rel="icon" type="image/png" href="../img/logo.jpg">
+</head>
+<body>
+  <div class="floating-nav-wrap">
+    <div class="floating-nav container">
+      <a href="home.html" class="brand">
+        <img src="../img/logo.jpg" alt="Anna Eyewear" class="brand-logo" />
+        <span>Anna Eyewear</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="home.html" class="active">Trang chủ</a>
+        <a href="product.html">Bộ sưu tập</a>
+        <a href="about.html">Về Anna</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+
+      <a href="product.html" class="nav-cta">Khám phá ngay</a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Mở menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M4 7H20" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 12H20" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round"/>
+          <path d="M4 17H20" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="mobile-panel container" id="mobilePanel">
+      <a href="home.html">Trang chủ</a>
+      <a href="product.html">Bộ sưu tập</a>
+      <a href="about.html">Về Anna</a>
+      <a href="contact.html">Liên hệ</a>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero-anna" id="home">
+      <div class="hero-anna-slider" aria-hidden="true">
+        <div class="hero-anna-slide active">
+          <img src="../img/banner1.jpg" alt="Anna Eyewear banner 1">
+        </div>
+        <div class="hero-anna-slide">
+          <img src="../img/banner2.png" alt="Anna Eyewear banner 2">
+        </div>
+      </div>
+
+      <div class="hero-anna-overlay"></div>
+
+      <div class="hero-anna-content container">
+        <span class="hero-anna-pill">Anna Eyewear 2026</span>
+        <h1>Tôn lên thần thái qua từng góc nhìn</h1>
+        <p>
+          Anna mang đến những thiết kế mắt kính thanh lịch, hiện đại và tinh giản,
+          để mỗi khung hình đều trở nên cuốn hút hơn theo cách rất riêng.
+        </p>
+
+        <div class="hero-anna-actions">
+          <a href="product.html" class="btn-primary">Khám phá bộ sưu tập</a>
+          <a href="#banner-section" class="btn-secondary">Xem thêm</a>
+        </div>
+      </div>
+
+      <div class="hero-anna-scroll" aria-hidden="true">
+        <div class="hero-anna-track">
+          <span>Anna Eyewear</span>
+          <span>Luxury Frames</span>
+          <span>Modern Elegance</span>
+          <span>Minimal Beauty</span>
+          <span>Anna Eyewear</span>
+          <span>Luxury Frames</span>
+          <span>Modern Elegance</span>
+          <span>Minimal Beauty</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner-section container" id="banner-section">
+      <article class="banner-card banner-left">
+        <img src="../img/banner4.jpg" alt="Elegant Everyday">
+        <div class="banner-card-overlay"></div>
+        <div class="banner-card-content">
+          <span class="banner-kicker">Elegant Everyday</span>
+          <h2>Thanh lịch cho nhịp sống hiện đại</h2>
+          <p>Thiết kế gọn gàng, tinh tế và dễ đồng hành cùng phong cách thường ngày.</p>
+        </div>
+      </article>
+
+      <article class="banner-card banner-right">
+        <img src="../img/banner3.png" alt="Modern Signature">
+        <div class="banner-card-overlay"></div>
+        <div class="banner-card-content">
+          <span class="banner-kicker">Modern Signature</span>
+          <h2>Dấu ấn nhẹ nhàng nhưng đầy cuốn hút</h2>
+          <p>Mỗi khung kính là một điểm nhấn sang trọng, tối giản và hiện diện vừa đủ.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="brand-message container">
+      <span class="section-mini-label">Anna Eyewear</span>
+      <h2>Vẻ đẹp đến từ sự tinh giản</h2>
+      <p>
+        Không cần quá nhiều chi tiết, một thiết kế đúng tỷ lệ và đúng thần thái đã đủ để tạo nên cảm giác sang trọng bền lâu.
+      </p>
+      <a href="product.html" class="btn-primary">Xem bộ sưu tập</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-accent"></div>
+
+    <div class="container footer-grid">
+      <div class="footer-brand-col">
+        <a href="home.html" class="brand footer-brand-link">
+          <img src="../img/logo.jpg" alt="Anna Eyewear" class="brand-logo" />
+          <span>Anna Eyewear</span>
+        </a>
+
+        <p class="footer-brand-text">
+          Anna theo đuổi vẻ đẹp thanh lịch, hiện đại và tinh giản. Mỗi thiết kế được chọn lựa để đồng hành cùng phong cách sống nhẹ nhàng nhưng vẫn đủ dấu ấn riêng.
+        </p>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M14 8H16V5H13.5C10.8 5 9 6.8 9 9.8V12H7V15H9V20H12.5V15H15.3L15.8 12H12.5V10.2C12.5 8.9 13 8 14 8Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="4" width="16" height="16" rx="5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M14 4C14.6 5.8 15.8 7.1 18 7.6V10.2C16.6 10.2 15.4 9.8 14.4 9V14.6C14.4 17.6 12.2 19.7 9.3 19.7C6.5 19.7 4.3 17.6 4.3 14.8C4.3 12.1 6.5 9.9 9.3 9.9C9.7 9.9 10.1 9.9 10.4 10V12.7C10.1 12.6 9.8 12.6 9.5 12.6C8.1 12.6 7 13.7 7 15.1C7 16.5 8.1 17.6 9.5 17.6C10.9 17.6 12 16.5 12 15.1V4H14Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Khám phá</h3>
+        <a href="home.html">Trang chủ</a>
+        <a href="product.html">Bộ sưu tập</a>
+        <a href="about.html">Về Anna</a>
+        <a href="contact.html">Liên hệ</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Hỗ trợ</h3>
+        <a href="return-policy.html">Chính sách đổi trả</a>
+        <a href="shipping-policy.html">Chính sách giao hàng</a>
+        <a href="terms.html">Điều khoản sử dụng</a>
+        <a href="privacy-policy.html">Chính sách bảo mật</a>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Thông tin liên hệ</h3>
+        <p>Anna Eyewear</p>
+        <p>123 Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh</p>
+        <p>0901 234 567</p>
+        <p>hello@annaeyewear.com</p>
+
+        <a href="contact.html" class="footer-btn">Liên hệ với chúng tôi</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Anna Eyewear. All rights reserved.</span>
+      <span>Eyewear crafted for modern elegance</span>
+    </div>
+  </footer>
+
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobilePanel = document.getElementById('mobilePanel');
+
+    mobileToggle?.addEventListener('click', () => {
+      mobilePanel.classList.toggle('open');
+    });
+
+    mobilePanel?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobilePanel.classList.remove('open'));
+    });
+
+    const annaSlides = document.querySelectorAll('.hero-anna-slide');
+    let annaCurrent = 0;
+
+    if (annaSlides.length > 1) {
+      setInterval(() => {
+        annaSlides[annaCurrent].classList.remove('active');
+        annaCurrent = (annaCurrent + 1) % annaSlides.length;
+        annaSlides[annaCurrent].classList.add('active');
+      }, 3800);
+    }
+  </script>
+</body>
+</html>
